@@ -1,0 +1,108 @@
+[submodule "foundry/lib/openzeppelin-contracts-v4"]
+	path = foundry/lib/openzeppelin-contracts-v4
+	url = https://github.com/OpenZeppelin/openzeppelin-contracts
+[submodule "foundry/lib/openzeppelin-contracts"]
+	path = foundry/lib/openzeppelin-contracts
+	url = https://github.com/OpenZeppelin/openzeppelin-contracts
+[submodule "foundry/lib/forge-std"]
+	path = foundry/lib/forge-std
+	url = https://github.com/foundry-rs/forge-std
+[submodule "foundry/lib/prb-test"]
+	path = foundry/lib/prb-test
+	url = https://github.com/PaulRBerg/prb-test
+[submodule "foundry/lib/v2-periphery"]
+	path = foundry/lib/v2-periphery
+	url = https://github.com/Uniswap/v2-periphery
+[submodule "foundry/lib/v2-core"]
+	path = foundry/lib/v2-core
+	url = https://github.com/Uniswap/v2-core
+[submodule "foundry/lib/v3-periphery"]
+	path = foundry/lib/v3-periphery
+	url = https://github.com/Uniswap/v3-periphery
+[submodule "foundry/lib/v3-core"]
+	path = foundry/lib/v3-core
+	url = https://github.com/Uniswap/v3-core
+[submodule "foundry/lib/v4-periphery"]
+	path = foundry/lib/v4-periphery
+	url = https://github.com/Uniswap/v4-periphery
+[submodule "foundry/lib/v4-core"]
+	path = foundry/lib/v4-core
+	url = https://github.com/Uniswap/v4-core
+[submodule "foundry/lib/solmate"]
+	path = foundry/lib/solmate
+	url = https://github.com/transmissions11/solmate
+[submodule "foundry/lib/solady"]
+	path = foundry/lib/solady
+	url = https://github.com/vectorized/solady
+[submodule "foundry/lib/safe-contracts"]
+	path = foundry/lib/safe-contracts
+	url = https://github.com/safe-global/safe-contracts
+[submodule "foundry/lib/openzeppelin-contracts-upgradeable"]
+	path = foundry/lib/openzeppelin-contracts-upgradeable
+	url = https://github.com/OpenZeppelin/openzeppelin-contracts-upgradeable
+[submodule "foundry/lib/openzeppelin-contracts-upgradeable-v4.7.1"]
+	path = foundry/lib/openzeppelin-contracts-upgradeable-v4.7.1
+	url = https://github.com/OpenZeppelin/openzeppelin-contracts-upgradeable
+[submodule "foundry/lib/openzeppelin-contracts-v4.7.1"]
+	path = foundry/lib/openzeppelin-contracts-v4.7.1
+	url = https://github.com/OpenZeppelin/openzeppelin-contracts
+[submodule "foundry/lib/safe-contracts-v1.3.0"]
+	path = foundry/lib/safe-contracts-v1.3.0
+	url = https://github.com/safe-global/safe-contracts
+[submodule "foundry/lib/@uniswap/v2-periphery"]
+	path = foundry/lib/@uniswap/v2-periphery
+	url = https://github.com/Uniswap/v2-periphery
+[submodule "foundry/lib/@uniswap/v2-core"]
+	path = foundry/lib/@uniswap/v2-core
+	url = https://github.com/Uniswap/v2-core
+[submodule "foundry/lib/@uniswap/v3-core"]
+	path = foundry/lib/@uniswap/v3-core
+	url = https://github.com/Uniswap/v3-core
+[submodule "foundry/lib/@uniswap/v3-periphery"]
+	path = foundry/lib/@uniswap/v3-periphery
+	url = https://github.com/Uniswap/v3-periphery
+[submodule "foundry/lib/@uniswap/v4-core"]
+	path = foundry/lib/@uniswap/v4-core
+	url = https://github.com/Uniswap/v4-core
+[submodule "foundry/lib/@uniswap/v4-periphery"]
+	path = foundry/lib/@uniswap/v4-periphery
+	url = https://github.com/Uniswap/v4-periphery
+[submodule "foundry/lib/@gnosis.pm/safe-contracts"]
+	path = foundry/lib/@gnosis.pm/safe-contracts
+	url = https://github.com/safe-global/safe-contracts
+[submodule "foundry/foundry/lib/@gnosis.pm/safe-contracts-v1.3.0"]
+	path = foundry/foundry/lib/@gnosis.pm/safe-contracts-v1.3.0
+	url = https://github.com/safe-global/safe-contracts
+[submodule "foundry/lib/@gnosis.pm/safe-contracts-v1.3.0"]
+	path = foundry/lib/@gnosis.pm/safe-contracts-v1.3.0
+	url = https://github.com/safe-global/safe-contracts
+[submodule "foundry/lib/@openzeppelin/contracts"]
+	path = foundry/lib/@openzeppelin/contracts
+	url = https://github.com/OpenZeppelin/openzeppelin-contracts
+[submodule "foundry/lib/@openzeppelin/contracts-v4.7.1"]
+	path = foundry/lib/@openzeppelin/contracts-v4.7.1
+	url = https://github.com/OpenZeppelin/openzeppelin-contracts
+[submodule "foundry/lib/@openzeppelin/contracts-upgradeable"]
+	path = foundry/lib/@openzeppelin/contracts-upgradeable
+	url = https://github.com/OpenZeppelin/openzeppelin-contracts-upgradeable
+[submodule "foundry/lib/@openzeppelin/contracts-upgradeable-v4.7.1"]
+	path = foundry/lib/@openzeppelin/contracts-upgradeable-v4.7.1
+	url = https://github.com/OpenZeppelin/openzeppelin-contracts-upgradeable
+[submodule "foundry/lib/@dev/forge-std"]
+	path = foundry/lib/@dev/forge-std
+	url = https://github.com/foundry-rs/forge-std
+[submodule "foundry/lib/@dev/prb-test"]
+	path = foundry/lib/@dev/prb-test
+	url = https://github.com/PaulRBerg/prb-test
+[submodule "foundry/lib/@dev/ds-test"]
+	path = foundry/lib/@dev/ds-test
+	url = https://github.com/dapphub/ds-test
+[submodule "foundry/lib/@openzeppelin/contracts-v4.7.3"]
+	path = foundry/lib/@openzeppelin/contracts-v4.7.3
+	url = https://github.com/OpenZeppelin/openzeppelin-contracts
+[submodule "foundry/lib/@solady"]
+	path = foundry/lib/@solady
+	url = https://github.com/Vectorized/solady
+[submodule "foundry/lib/@solmate"]
+	path = foundry/lib/@solmate
+	url = https://github.com/transmissions11/solmate

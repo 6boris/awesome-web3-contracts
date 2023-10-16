@@ -1,0 +1,17 @@
+# directories
+node_modules
+
+foundry/out
+foundry/coverage
+foundry/cache
+foundry/broadcast
+
+# files
+*.env
+*.log
+.DS_Store
+.pnp.*
+lcov.info
+yarn.lock
+
+

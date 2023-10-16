@@ -1,0 +1,15 @@
+@contracts=contracts
+
+@solmate=foundry/lib/solmate/src
+@solady=foundry/lib/solady/src
+@prb/test=foundry/lib/@dev/prb-test/src
+
+@gnosis.pm/safe-contracts=foundry/lib/@gnosis.pm/safe-contracts/contracts
+@gnosis.pm/safe-contracts-v1.3.0=foundry/lib/@gnosis.pm/safe-contracts-v1.3.0/contracts
+
+@openzeppelin/contracts=foundry/lib/@openzeppelin/contracts/contracts
+@openzeppelin/contracts-upgradeable=foundry/lib/@openzeppelin/contracts-upgradeable/contracts
+@openzeppelin/contracts-v4.7.1=foundry/lib/@openzeppelin/contracts-v4.7.1/contracts
+@openzeppelin/contracts-v4.7.3=foundry/lib/@openzeppelin/contracts-v4.7.3/contracts
+@openzeppelin/contracts-upgradeable-v4.7.1=foundry/lib/@openzeppelin/contracts-upgradeable-v4.7.1/contracts
+

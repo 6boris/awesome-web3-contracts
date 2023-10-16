@@ -1,0 +1,13 @@
+{
+  "[solidity]": {
+    "editor.defaultFormatter": "NomicFoundation.hardhat-solidity"
+  },
+  "[toml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "npm.exclude": "/foundry/**/lib/**",
+  // "solidity.formatter": "prettier",
+  "solidity.formatter": "forge"
+  // "editor.defaultFormatter": "esbenp.prettier-vscode",
+  // "editor.formatOnSave": true
+}

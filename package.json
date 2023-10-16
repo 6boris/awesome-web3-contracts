@@ -1,0 +1,33 @@
+{
+  "name": "@6boris/awesome-web3-contracts",
+  "description": "",
+  "version": "0.0.1",
+  "author": {
+    "name": "6boris",
+    "url": "https://github.com/6boris"
+  },
+  "keywords": [
+    "blockchain",
+    "ethereum",
+    "forge",
+    "foundry",
+    "smart-contracts",
+    "solidity",
+    "ethernaut",
+    "hacker"
+  ],
+  "private": true,
+  "scripts": {
+    "clean": "rm -rf foundry/cache foundry/out foundry/broadcast",
+    "lint": "yarn lint:sol && yarn lint:prettier",
+    "lint:sol": "forge fmt && yarn solhint foundry/test/**/*.sol contracts/**/*.sol --fix",
+    "lint:prettier": "prettier --write **/*.{json,md,yml} --ignore-path=.prettierignore",
+    "test": "forge test",
+    "test:coverage": "forge coverage",
+    "test:coverage:report": "forge coverage --report lcov && genhtml lcov.info --branch-coverage --output-dir foundry/coverage"
+  },
+  "devDependencies": {
+    "prettier": "^3.0.3",
+    "solhint": "^3.6.2"
+  }
+}
