@@ -3,6 +3,7 @@ pragma solidity ^0.8.0;
 
 import { Test } from "@dev/forge-std/src/Test.sol";
 import { DamnValuableToken } from "@contracts/CTF/Damn-Vulnerable-DeFi/00.Base/DamnValuableToken.sol";
+import { WalletDeployer } from "@contracts/CTF/Damn-Vulnerable-DeFi/13.Wallet-Mining.sol";
 
 /*
     forge test --match-path foundry/test/CTF/Damn-Vulnerable-DeFi/13.Wallet-Mining.t.sol -vvvvv
@@ -14,6 +15,7 @@ contract Challenge_13_Wallet_Mining_Test is Test {
     address private feeRecipient = address(2);
     address private player = address(2333);
     DamnValuableToken public token;
+    WalletDeployer private walletDeployer;
 
     function setUp() public {
         vm.startPrank(deployer);
@@ -25,6 +27,7 @@ contract Challenge_13_Wallet_Mining_Test is Test {
     function _before() public {
         /* SETUP SCENARIO - NO NEED TO CHANGE ANYTHING HERE */
         token = new DamnValuableToken();
+        walletDeployer = new WalletDeployer(address(token));
     }
 
     function test_Exploit() public {

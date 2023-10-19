@@ -32,10 +32,6 @@ contract Challenge_6_Selfie_Test is Test {
 
     function _before() public {
         /* SETUP SCENARIO - NO NEED TO CHANGE ANYTHING HERE */
-        // address payable[] memory users = util.createUsers(2);
-        // deployer = users[0];
-        // player = users[1];
-
         token = new DamnValuableTokenSnapshot(TOKEN_INITIAL_SUPPLY);
         governance = new SimpleGovernance(address(token));
 

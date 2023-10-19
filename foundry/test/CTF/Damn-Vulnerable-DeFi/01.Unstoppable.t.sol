@@ -23,10 +23,12 @@ contract Challenge_1_Unstoppable_Test is Test {
     uint256 private INITIAL_PLAYER_TOKEN_BALANCE = 10 ether;
 
     function setUp() public {
+        vm.label(deployer, "deployer");
+        vm.label(feeRecipient, "feeRecipient");
+        vm.label(player, "player");
         vm.startPrank(deployer);
         _before();
         vm.stopPrank();
-
         vm.startPrank(player);
     }
 

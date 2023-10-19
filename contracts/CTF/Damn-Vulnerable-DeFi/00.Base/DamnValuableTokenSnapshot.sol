@@ -1,5 +1,4 @@
 // SPDX-License-Identifier: MIT
-
 pragma solidity ^0.8.0;
 
 import { ERC20Snapshot, ERC20 } from "@openzeppelin/contracts-v4.7.1/token/ERC20/extensions/ERC20Snapshot.sol";

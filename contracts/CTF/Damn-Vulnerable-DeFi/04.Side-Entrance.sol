@@ -62,6 +62,10 @@ contract SideEntranceAttack {
 
     function execute() external payable {
         require(msg.sender == address(pool), "msg.sender");
+        /*
+            1. poll ether balance + msg.value
+            2. poll token balance + msg.value
+        */
         pool.deposit{ value: msg.value }();
     }
 

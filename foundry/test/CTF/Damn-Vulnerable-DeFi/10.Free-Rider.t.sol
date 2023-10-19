@@ -1,14 +1,15 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
+import { console2 } from "@dev/forge-std/src/console2.sol";
 import { PRBTest } from "@prb/test/PRBTest.sol";
+import { IWETH } from "@contracts/CTF/Damn-Vulnerable-DeFi/00.Base/WETH9.sol";
 import { DamnValuableNFT } from "@contracts/CTF/Damn-Vulnerable-DeFi/00.Base/DamnValuableNFT.sol";
 import { DamnValuableToken } from "@contracts/CTF/Damn-Vulnerable-DeFi/00.Base/DamnValuableToken.sol";
 import {
     FreeRiderNFTMarketplace,
     FreeRiderRecovery,
-    FreeRiderHack,
-    IWETH
+    FreeRiderHack
 } from "@contracts/CTF/Damn-Vulnerable-DeFi/10.Free-Rider.sol";
 import { IUniswapV2Router02 } from "@uniswap/v2-periphery/contracts/interfaces/IUniswapV2Router02.sol";
 import { IUniswapV2Factory } from "@uniswap/v2-core/contracts/interfaces/IUniswapV2Factory.sol";
@@ -50,6 +51,9 @@ contract Challenge_10_Free_Rider_Test is PRBTest {
     function setUp() public {
         // vm.startPrank(deployer);
         vm.createSelectFork({ urlOrAlias: "mainnet" });
+        vm.label(deployer, "deployer");
+        vm.label(devs, "devs");
+        vm.label(player, "player");
         vm.deal(deployer, type(uint256).max);
         vm.deal(devs, type(uint256).max);
         _before();
@@ -58,7 +62,7 @@ contract Challenge_10_Free_Rider_Test is PRBTest {
 
     function _before() public {
         /* SETUP SCENARIO - NO NEED TO CHANGE ANYTHING HERE */
-
+        vm.startPrank(deployer);
         // Player starts with limited ETH balance
         vm.deal(player, PLAYER_INITIAL_ETH_BALANCE);
         assertEq(player.balance, PLAYER_INITIAL_ETH_BALANCE);
@@ -68,12 +72,14 @@ contract Challenge_10_Free_Rider_Test is PRBTest {
 
         // Deploy token to be traded against WETH in Uniswap v2
         token = new DamnValuableToken();
-
+        vm.label(address(token), "token");
         // Deploy Uniswap Factory and Router
         // https://etherscan.io/address/0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D#code
         uniswapFactory = IUniswapV2Factory(0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f);
+        vm.label(address(token), "uniswapFactory");
         // https://etherscan.io/address/0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f#code
         uniswapRouter = IUniswapV2Router02(0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D);
+        vm.label(address(token), "uniswapRouter");
         // Approve tokens, and then create Uniswap v2 pair against WETH and add liquidity
         // The function takes care of deploying the pair automatically
         token.approve(address(uniswapRouter), UNISWAP_INITIAL_TOKEN_RESERVE);
@@ -83,15 +89,13 @@ contract Challenge_10_Free_Rider_Test is PRBTest {
 
         // Get a reference to the created Uniswap pair
         uniswapPair = IUniswapV2Pair(uniswapFactory.getPair(address(token), address(weth)));
-
+        vm.label(address(uniswapPair), "uniswapPair");
         assertEq(uniswapPair.token0(), address(token), "");
         assertEq(uniswapPair.token1(), address(weth), "");
         assertGt(uniswapPair.balanceOf(deployer), 0, "");
-        vm.startPrank(deployer);
         // Deploy the marketplace and get the associated ERC721 token
         // The marketplace will automatically mint AMOUNT_OF_NFTS to the deployer (see
         marketplace = new FreeRiderNFTMarketplace{ value: MARKETPLACE_INITIAL_ETH_BALANCE }(AMOUNT_OF_NFTS);
-
         // Deploy NFT contract
         nft = DamnValuableNFT(marketplace.token());
         assertEq(nft.owner(), address(0), "");
@@ -108,7 +112,7 @@ contract Challenge_10_Free_Rider_Test is PRBTest {
             _offerManyPrices.push(NFT_PRICE);
         }
         marketplace.offerMany(_offerManyTokenIds, _offerManyPrices);
-
+        vm.stopPrank();
         // Deploy devs' contract, adding the player as the beneficiary
         // mock player => tx.origin
         vm.startPrank(devs);

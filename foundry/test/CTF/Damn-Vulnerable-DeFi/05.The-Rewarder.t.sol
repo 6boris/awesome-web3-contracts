@@ -22,7 +22,6 @@ contract Challenge_5_The_Rewarder_Test is Test {
     using FixedPointMathLib for uint256;
 
     address private deployer = address(1);
-    address private feeRecipient = address(2);
     address private player = address(2333);
 
     address private alice = address(5);
@@ -40,6 +39,12 @@ contract Challenge_5_The_Rewarder_Test is Test {
     uint256 private TOKENS_IN_LENDER_POOL = 1_000_000 ether;
 
     function setUp() public {
+        vm.label(deployer, "deployer");
+        vm.label(player, "player");
+        vm.label(alice, "alice");
+        vm.label(bob, "bob");
+        vm.label(charlie, "charlie");
+        vm.label(david, "david");
         _before();
     }
 

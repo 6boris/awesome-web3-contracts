@@ -177,7 +177,6 @@ contract BackdoorHack {
         maliciousApprove = new MaliciousApprove();
 
         // Create a new safe through the factory for every user
-
         bytes memory initializer;
         address[] memory owners = new address[](1);
         address wallet;
