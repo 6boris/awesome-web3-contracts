@@ -13,3 +13,5 @@
 @openzeppelin/contracts-v4.7.3=foundry/lib/@openzeppelin/contracts-v4.7.3/contracts
 @openzeppelin/contracts-upgradeable-v4.7.1=foundry/lib/@openzeppelin/contracts-upgradeable-v4.7.1/contracts
 
+@aave/v3-core=foundry/lib/aave-v3-core/contracts
+@aave/v3-periphery=foundry/lib/aave-v3-periphery/contracts
