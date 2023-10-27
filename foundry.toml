@@ -18,7 +18,7 @@
   out = "foundry/out"
   broadcast = 'foundry/broadcast'
   cache_path = 'foundry/cache'
-  
+
 
 [profile.ci]
   fuzz = { runs = 10_000 }
@@ -52,7 +52,7 @@
   goerli  = "https://eth-goerli.g.alchemy.com/v2/${API_KEY_ALCHEMY}"
   sepolia = "https://eth-sepolia.g.alchemy.com/v2/${API_KEY_ALCHEMY}"
   holesky = "https://ethereum-holesky.publicnode.com"
-  
+
   polygon = "https://polygon-mainnet.g.alchemy.com/v2/${API_KEY_ALCHEMY}"
   mumbai  = "https://polygon-mumbai.g.alchemy.com/v2/${API_KEY_ALCHEMY}"
 
@@ -65,3 +65,6 @@
   optimism_mainnet = "https://opt-mainnet.g.alchemy.com/v2/${API_KEY_ALCHEMY}"
   optimism_goerli  = "https://opt-goerli.g.alchemy.com/v2/${API_KEY_ALCHEMY}"
 
+
+  avalanche_mainnet = "https://rpc.ankr.com/avalanche"
+  avalanche_fuji = "https://rpc.ankr.com/avalanche_fuji"

@@ -31,6 +31,10 @@ contract Challenge_11_Backdoor_Test is Test {
     WalletRegistry private walletRegistry;
 
     function setUp() public {
+        vm.label(alice, "alice");
+        vm.label(bob, "bob");
+        vm.label(charlie, "charlie");
+        vm.label(david, "david");
         vm.deal(deployer, type(uint256).max);
         _before();
         // vm.stopPrank();
@@ -43,10 +47,6 @@ contract Challenge_11_Backdoor_Test is Test {
         walletFactory = new GnosisSafeProxyFactory();
         token = new DamnValuableToken();
 
-        vm.label(alice, "alice");
-        vm.label(bob, "bob");
-        vm.label(charlie, "charlie");
-        vm.label(david, "david");
         _initialBeneficiaries.push(alice);
         _initialBeneficiaries.push(bob);
         _initialBeneficiaries.push(charlie);
@@ -54,9 +54,10 @@ contract Challenge_11_Backdoor_Test is Test {
 
         walletRegistry =
             new WalletRegistry(address(masterCopy),address(walletFactory), address(token), _initialBeneficiaries);
+        assertEq(walletRegistry.owner(), deployer, "");
+
         token.transfer(address(walletRegistry), AMOUNT_TOKENS_DISTRIBUTED);
 
-        assertEq(walletRegistry.owner(), deployer, "");
         for (uint256 i = 0; i < _initialBeneficiaries.length; i++) {
             assertTrue(walletRegistry.beneficiaries(_initialBeneficiaries[i]), "");
             vm.startPrank(_initialBeneficiaries[i]);

@@ -96,3 +96,12 @@ ELEVATE YOUR EVM EXPERTISE WITH HANDS-ON CHALLENGES, COMPETE ON THE LEADERBOARD,
 |        | [11.DIVERSION](https://onlypwner.xyz/challenges/4)       | ...  |  ...  | ...  |
 |        | [12.PAYDAY](https://onlypwner.xyz/challenges/11)         | ...  |  ...  | ...  |
 
+
+## Hacking Analysis
+
+Provide some Web3 Hack event analysis backtracking.
+
+| Hack                                                    |  Victim | Video | Note |
+| :------------------------------------------------------- | :--: | :---: | :--: |
+| [20231012 - Platypus](https://mirror.xyz/leekdev.eth/RYeKmdl1rkds5IwKTw2Wnr8zLzEDug02xseUZ_wMwvA)|[Victim contract](https://snowtrace.io/address/0x4658EA7e9960D6158a261104aAA160cC953bb6ba),[Exploit transaction](https://snowtrace.io/tx/0xab5f6242fb073af1bb3cd6e891bc93d247e748a69e599a3744ff070447acb20f) |  ...  | ...  |
+
