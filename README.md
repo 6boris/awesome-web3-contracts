@@ -103,5 +103,5 @@ Provide some Web3 Hack event analysis backtracking.
 
 | Hack                                                    |  Victim | Video | Note |
 | :------------------------------------------------------- | :--: | :---: | :--: |
-| [20231012 - Platypus](https://mirror.xyz/leekdev.eth/RYeKmdl1rkds5IwKTw2Wnr8zLzEDug02xseUZ_wMwvA)|[Victim contract](https://snowtrace.io/address/0x4658EA7e9960D6158a261104aAA160cC953bb6ba),[Exploit transaction](https://snowtrace.io/tx/0xab5f6242fb073af1bb3cd6e891bc93d247e748a69e599a3744ff070447acb20f) |  ...  | ...  |
+| [20231012 - Platypus](https://mirror.xyz/leekdev.eth/RYeKmdl1rkds5IwKTw2Wnr8zLzEDug02xseUZ_wMwvA)|[Victim contract](https://snowtrace.io/address/0x4658EA7e9960D6158a261104aAA160cC953bb6ba),[Exploit transaction](https://snowtrace.io/tx/0xab5f6242fb073af1bb3cd6e891bc93d247e748a69e599a3744ff070447acb20f),[Exploit Code](./contracts/Hack/20231012-Platypus.sol) |  [BILIBILI](https://www.bilibili.com/video/BV14u4y1E7nk),[YouTube](https://www.youtube.com/watch?v=THp4budcfpc)  | ...  |
 
