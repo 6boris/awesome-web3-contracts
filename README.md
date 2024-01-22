@@ -48,7 +48,7 @@ forge script foundry/script/Deploy.s.sol --fork-url http://localhost:8545 --broa
 | ✅ [7.Compromised](https://www.damnvulnerabledefi.xyz/challenges/compromised/) | ...  | [BILIBILI](https://www.bilibili.com/list/3493272831920239?desc=0&sid=3695249&bvid=BV1vu4y1p7nH) | ... |
 | ✅ [8.Puppet](https://www.damnvulnerabledefi.xyz/challenges/puppet/) | ...  | [BILIBILI](https://www.bilibili.com/list/3493272831920239?desc=0&sid=3695249&bvid=BV1XC4y1G7tj) | ... |
 | ✅ [9.Puppet V2](https://www.damnvulnerabledefi.xyz/challenges/puppet-v2/) | ...  |[BILIBILI](https://www.bilibili.com/list/3493272831920239?desc=0&sid=3695249&bvid=BV1784y1d7X3)| ... |
-| ✅ [10.Free Rider](https://www.damnvulnerabledefi.xyz/challenges/free-rider/) | ...  | [BILIBILI](https://www.bilibili.com/list/3493272831920239?desc=0&sid=3695249&bvid=BV1sw411w7Y1){:target="_blank"} | ... |
+| ✅ [10.Free Rider](https://www.damnvulnerabledefi.xyz/challenges/free-rider/) | ...  | [BILIBILI](https://www.bilibili.com/video/BV1784y1d7X3) | ... |
 |  [11.Backdoor]() | ...  | ... | ... |
 |  [12.Climber]() | ...  | ... | ... |
 |  [13.Wallet Mining]() | ...  | ... | ... |
