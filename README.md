@@ -5,13 +5,7 @@ Holds the contracts that web3 developers use on a daily basis, including etherna
 ## Install Dependency
 
 ```yarn
-yarn
-```
-
-Common install It might take a while.
-
-```bash
-yarn
+bun install
 ```
 
 ```bash
