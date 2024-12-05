@@ -71,7 +71,7 @@ contract Challenge_9_Puppet_V2_Test is PRBTest {
         // Get a reference to the created Uniswap pair
         uniswapPair = IUniswapV2Pair(uniswapFactory.getPair(address(token), address(weth)));
         // Deploy the lending pool
-        lendingPool = new PuppetV2Pool(address(weth),address(token),address(uniswapPair),address(uniswapFactory));
+        lendingPool = new PuppetV2Pool(address(weth), address(token), address(uniswapPair), address(uniswapFactory));
 
         // Setup initial token balances of pool and player accounts
         token.transfer(player, PLAYER_INITIAL_TOKEN_BALANCE);

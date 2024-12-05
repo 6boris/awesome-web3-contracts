@@ -10,7 +10,6 @@ import { ReentrancyGuard } from "@openzeppelin/contracts-v4.7.1/security/Reentra
  * @title AuthorizedExecutor
  * @author Damn Vulnerable DeFi (https://damnvulnerabledefi.xyz)
  */
-
 abstract contract AuthorizedExecutor is ReentrancyGuard {
     using Address for address;
 

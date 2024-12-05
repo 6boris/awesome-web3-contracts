@@ -10,7 +10,6 @@ import { UUPSUpgradeable } from "@openzeppelin/contracts-upgradeable-v4.7.1/prox
  * @title AuthorizerUpgradeable
  * @author Damn Vulnerable DeFi (https://damnvulnerabledefi.xyz)
  */
-
 contract AuthorizerUpgradeable is Initializable, OwnableUpgradeable, UUPSUpgradeable {
     mapping(address => mapping(address => uint256)) private wards;
 

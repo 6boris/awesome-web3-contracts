@@ -9,7 +9,6 @@ import { DamnValuableToken } from "@contracts/CTF/Damn-Vulnerable-DeFi/00.Base/D
  * @title TrusterLenderPool
  * @author Damn Vulnerable DeFi (https://damnvulnerabledefi.xyz)
  */
-
 contract TrusterLenderPool is ReentrancyGuard {
     using Address for address;
 

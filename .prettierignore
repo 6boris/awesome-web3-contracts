@@ -2,7 +2,6 @@
 broadcast
 cache
 coverage
-lib
 node_modules
 out
 
@@ -11,10 +10,8 @@ out
 *.log
 .DS_Store
 .pnp.*
+bun.lockb
 lcov.info
 package-lock.json
 pnpm-lock.yaml
 yarn.lock
-foundry/lib
-
-README.md
