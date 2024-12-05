@@ -4,14 +4,13 @@ pragma solidity ^0.8.0;
 import { Owned } from "@solmate/auth/Owned.sol";
 import { FixedPointMathLib } from "@solmate/utils/FixedPointMathLib.sol";
 import { ReentrancyGuard } from "@solmate/utils/ReentrancyGuard.sol";
-import { SafeTransferLib, ERC4626, ERC20 } from "@solmate/mixins/ERC4626.sol";
+import { SafeTransferLib, ERC4626, ERC20 } from "@solmate/tokens/ERC4626.sol";
 import { IERC3156FlashBorrower, IERC3156FlashLender } from "@openzeppelin/contracts-v4.7.1/interfaces/IERC3156.sol";
 
 /**
  * @title UnstoppableVault
  * @author Damn Vulnerable DeFi (https://damnvulnerabledefi.xyz)
  */
-
 contract UnstoppableVault is IERC3156FlashLender, ReentrancyGuard, Owned, ERC4626 {
     using SafeTransferLib for ERC20;
     using FixedPointMathLib for uint256;

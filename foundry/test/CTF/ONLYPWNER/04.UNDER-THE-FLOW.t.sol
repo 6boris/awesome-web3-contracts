@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import { Test } from "@dev/forge-std/src/Test.sol";
-import { console2 } from "@dev/forge-std/src/console2.sol";
+import { Test } from "@dev/forge-std/Test.sol";
+import { console2 } from "@dev/forge-std/console2.sol";
 import { ImprovedERC20 } from "@contracts/CTF/ONLYPWNER/04.UNDER-THE-FLOW.sol";
 
 /*
@@ -24,11 +24,7 @@ contract UNDER_THE_FLOW_04_Test is Test {
 
     function _before() public {
         // 1.SetUp the exploit
-        erc20 = new ImprovedERC20(
-            "Improved ERC20",
-            "IMPERC20",
-            18,
-            100 ether);
+        erc20 = new ImprovedERC20("Improved ERC20", "IMPERC20", 18, 100 ether);
 
         erc20.transfer(other, 100 ether);
     }

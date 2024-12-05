@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import { console2 } from "@dev/forge-std/src/console2.sol";
+import { console2 } from "@dev/forge-std/console2.sol";
 import { IWETH } from "@contracts/CTF/Damn-Vulnerable-DeFi/00.Base/WETH9.sol";
 import { IERC721 } from "@openzeppelin/contracts-v4.7.1/token/ERC721/IERC721.sol";
 import { Address } from "@openzeppelin/contracts-v4.7.1/utils/Address.sol";

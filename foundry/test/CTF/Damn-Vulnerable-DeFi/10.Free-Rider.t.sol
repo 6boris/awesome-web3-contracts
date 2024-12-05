@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import { console2 } from "@dev/forge-std/src/console2.sol";
+import { console2 } from "@dev/forge-std/console2.sol";
 import { PRBTest } from "@prb/test/PRBTest.sol";
 import { IWETH } from "@contracts/CTF/Damn-Vulnerable-DeFi/00.Base/WETH9.sol";
 import { DamnValuableNFT } from "@contracts/CTF/Damn-Vulnerable-DeFi/00.Base/DamnValuableNFT.sol";
@@ -125,8 +125,9 @@ contract Challenge_10_Free_Rider_Test is PRBTest {
         /* START CODE YOUR SOLUTION HERE */
 
         // ...
-        FreeRiderHack hackInst =
-        new  FreeRiderHack(address(uniswapPair), payable(marketplace), address(weth), address(nft), address(devsContract));
+        FreeRiderHack hackInst = new FreeRiderHack(
+            address(uniswapPair), payable(marketplace), address(weth), address(nft), address(devsContract)
+        );
         (bool isSuccess,) = address(hackInst).call{ value: player.balance }("");
         assertEq(isSuccess, true, "");
         hackInst.attack();

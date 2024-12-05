@@ -1,16 +1,16 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import { Test } from "@dev/forge-std/src/Test.sol";
+import { Test } from "@dev/forge-std/Test.sol";
 import { Fallback, FallbackFactory } from "@contracts/CTF/Ethernaut/01_Fallback.sol";
 import { Ethernaut } from "@contracts/CTF/Ethernaut/00_Ethernaut.sol";
-import { console } from "@dev/forge-std/src/console.sol";
+import { console } from "@dev/forge-std/console.sol";
 
 /*
     forge test --match-path foundry/test/Ethernaut/01_Fallback.t.sol -vvvv
 */
 
-contract FallbackTest is Test {
+contract FallbackTest is Test, Ethernaut {
     Ethernaut private ethernaut;
     // hacking attack address
     address private attackAddress = address(2333);

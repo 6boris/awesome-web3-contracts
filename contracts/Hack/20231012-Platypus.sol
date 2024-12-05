@@ -1,10 +1,10 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import { console2 } from "@dev/forge-std/src/console2.sol";
+import { console2 } from "@dev/forge-std/console2.sol";
 import { WETH } from "@solady/tokens/WETH.sol";
-import { FlashLoanReceiverBase } from "@aave/v3-core/flashloan/base/FlashLoanReceiverBase.sol";
-import { IPoolAddressesProvider } from "@aave/v3-core/interfaces/IPoolAddressesProvider.sol";
+import { FlashLoanReceiverBase } from "@aave/core-v3/flashloan/base/FlashLoanReceiverBase.sol";
+import { IPoolAddressesProvider } from "@aave/core-v3/interfaces/IPoolAddressesProvider.sol";
 
 /*
     https://snowtrace.io/tx/0xab5f6242fb073af1bb3cd6e891bc93d247e748a69e599a3744ff070447acb20f

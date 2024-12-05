@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.0;
 
-import { Script } from "@dev/forge-std/src/Script.sol";
-import { console2 } from "@dev/forge-std/src/console2.sol";
+import { Script } from "@dev/forge-std/Script.sol";
+import { console2 } from "@dev/forge-std/console2.sol";
 import { WrappedEther, WrappedEtherExploit } from "@contracts/CTF/ONLYPWNER/05.WRAPPED-ETHER.sol";
 
 /*

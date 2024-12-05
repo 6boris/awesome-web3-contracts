@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import { Test } from "@dev/forge-std/src/Test.sol";
+import { Test } from "@dev/forge-std/Test.sol";
 import { DamnValuableToken } from "@contracts/CTF/Damn-Vulnerable-DeFi/00.Base/DamnValuableToken.sol";
 import { ReceiverUnstoppable, UnstoppableVault } from "@contracts/CTF/Damn-Vulnerable-DeFi/01.Unstoppable.sol";
 

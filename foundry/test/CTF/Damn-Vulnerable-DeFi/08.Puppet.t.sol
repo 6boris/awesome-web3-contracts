@@ -2,7 +2,7 @@
 pragma solidity ^0.8.0;
 
 import { PRBTest } from "@prb/test/PRBTest.sol";
-import { console2 } from "@dev/forge-std/src/console2.sol";
+import { console2 } from "@dev/forge-std/console2.sol";
 import { DamnValuableToken } from "@contracts/CTF/Damn-Vulnerable-DeFi/00.Base/DamnValuableToken.sol";
 
 import {

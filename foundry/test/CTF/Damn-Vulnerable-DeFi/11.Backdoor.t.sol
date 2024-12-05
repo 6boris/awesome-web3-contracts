@@ -1,9 +1,9 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import { Test } from "@dev/forge-std/src/Test.sol";
-import { GnosisSafe } from "@gnosis.pm/safe-contracts-v1.3.0/GnosisSafe.sol";
-import { GnosisSafeProxyFactory } from "@gnosis.pm/safe-contracts-v1.3.0/proxies/GnosisSafeProxyFactory.sol";
+import { Test } from "@dev/forge-std/Test.sol";
+import { GnosisSafe } from "@gnosis.pm/safe-contracts/GnosisSafe.sol";
+import { GnosisSafeProxyFactory } from "@gnosis.pm/safe-contracts/proxies/GnosisSafeProxyFactory.sol";
 import { DamnValuableToken } from "@contracts/CTF/Damn-Vulnerable-DeFi/00.Base/DamnValuableToken.sol";
 import { WalletRegistry, BackdoorHack } from "@contracts/CTF/Damn-Vulnerable-DeFi/11.Backdoor.sol";
 
@@ -53,7 +53,7 @@ contract Challenge_11_Backdoor_Test is Test {
         _initialBeneficiaries.push(david);
 
         walletRegistry =
-            new WalletRegistry(address(masterCopy),address(walletFactory), address(token), _initialBeneficiaries);
+            new WalletRegistry(address(masterCopy), address(walletFactory), address(token), _initialBeneficiaries);
         assertEq(walletRegistry.owner(), deployer, "");
 
         token.transfer(address(walletRegistry), AMOUNT_TOKENS_DISTRIBUTED);

@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import { Test } from "@dev/forge-std/src/Test.sol";
-import { console2 } from "@dev/forge-std/src/console2.sol";
+import { Test } from "@dev/forge-std/Test.sol";
+import { console2 } from "@dev/forge-std/console2.sol";
 import { MintableERC20, Vault } from "@contracts/CTF/ONLYPWNER/03.REVERSE-RUGPULL.sol";
 
 /*

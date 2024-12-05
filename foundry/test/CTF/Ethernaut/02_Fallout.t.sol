@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import { Test } from "@dev/forge-std/src/Test.sol";
-import { console } from "@dev/forge-std/src/console.sol";
+import { Test } from "@dev/forge-std/Test.sol";
+import { console } from "@dev/forge-std/console.sol";
 import { Ethernaut } from "@contracts/CTF/Ethernaut/00_Ethernaut.sol";
 import { Fallout, FalloutFactory } from "@contracts/CTF/Ethernaut/02_Fallout.sol";
 

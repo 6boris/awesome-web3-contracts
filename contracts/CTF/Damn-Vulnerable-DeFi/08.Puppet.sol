@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import { console2 } from "@dev/forge-std/src/console2.sol";
+import { console2 } from "@dev/forge-std/console2.sol";
 import { Address } from "@openzeppelin/contracts-v4.7.1/utils/Address.sol";
 import { ReentrancyGuard } from "@openzeppelin/contracts-v4.7.1/security/ReentrancyGuard.sol";
 import { DamnValuableToken } from "@contracts/CTF/Damn-Vulnerable-DeFi/00.Base/DamnValuableToken.sol";
@@ -212,7 +212,6 @@ interface IUniswapV1Factory {
  * @title PuppetPool
  * @author Damn Vulnerable DeFi (https://damnvulnerabledefi.xyz)
  */
-
 contract PuppetPool is ReentrancyGuard {
     using Address for address payable;
 

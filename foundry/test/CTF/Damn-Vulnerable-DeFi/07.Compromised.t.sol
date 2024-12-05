@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import { Test } from "@dev/forge-std/src/Test.sol";
+import { Test } from "@dev/forge-std/Test.sol";
 import {
     Exchange,
     TrustfulOracle,
@@ -63,7 +63,7 @@ contract Challenge_7_Compromised_Test is Test {
 
         TrustfulOracleInitializer initializer = new TrustfulOracleInitializer(sources, symbols, initialPrices);
         oracle = TrustfulOracle(initializer.oracle());
-        exchange = new Exchange{value: EXCHANGE_INITIAL_ETH_BALANCE}(address(oracle));
+        exchange = new Exchange{ value: EXCHANGE_INITIAL_ETH_BALANCE }(address(oracle));
         nftToken = DamnValuableNFT(exchange.token());
     }
 

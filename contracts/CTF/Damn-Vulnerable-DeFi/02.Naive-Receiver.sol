@@ -9,7 +9,6 @@ import { IERC3156FlashBorrower, IERC3156FlashLender } from "@openzeppelin/contra
  * @title FlashLoanReceiver
  * @author Damn Vulnerable DeFi (https://damnvulnerabledefi.xyz)
  */
-
 contract FlashLoanReceiver is IERC3156FlashBorrower {
     address private pool;
     address private constant ETH = 0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE;
