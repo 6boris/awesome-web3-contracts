@@ -10,7 +10,6 @@
     "no-console": "off",
     "not-rely-on-time": "off",
     "one-contract-per-file": "off",
-    "custom-errors": "off",
     "no-empty-blocks": "off",
     "contract-name-camelcase": "off",
     "const-name-snakecase": "off",
