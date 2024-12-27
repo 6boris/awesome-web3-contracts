@@ -1,0 +1,48 @@
+[
+  {
+    "type": "function",
+    "name": "BatchTransferERC20",
+    "inputs": [
+      {
+        "name": "token",
+        "type": "address",
+        "internalType": "contract ERC20"
+      },
+      {
+        "name": "toAddressList",
+        "type": "address[]",
+        "internalType": "address[]"
+      },
+      {
+        "name": "toAmountList",
+        "type": "uint256[]",
+        "internalType": "uint256[]"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "BatchTransferERC721",
+    "inputs": [
+      {
+        "name": "token",
+        "type": "address",
+        "internalType": "contract ERC721"
+      },
+      {
+        "name": "toAddressList",
+        "type": "address[]",
+        "internalType": "address[]"
+      },
+      {
+        "name": "toTokenIDList",
+        "type": "uint256[]",
+        "internalType": "uint256[]"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  }
+]

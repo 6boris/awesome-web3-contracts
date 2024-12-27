@@ -13,5 +13,5 @@ foundry/broadcast
 .pnp.*
 lcov.info
 yarn.lock
-
-
+build
+.idea

@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity >=0.8.0 <=0.9.0;
+pragma solidity >=0.8.25 <0.9.0;
 
 import { Script } from "@dev/forge-std/Script.sol";
 
@@ -12,10 +12,10 @@ abstract contract EthernautScript is Script {
 
     /// @dev The address of the transaction broadcaster.
     address internal broadcaster;
+    address internal player;
 
     /// @dev Used to derive the broadcaster's address if $ETH_FROM is not defined.
     string internal mnemonic;
-    uint256 internal mnemonicAccountIndex;
 
     /// @dev Initializes the transaction broadcaster like this:
     ///
@@ -30,14 +30,14 @@ abstract contract EthernautScript is Script {
             broadcaster = from;
         } else {
             mnemonic = vm.envOr({ name: "MNEMONIC_DEV", defaultValue: TEST_MNEMONIC });
-            mnemonicAccountIndex = vm.envOr({ name: "MNEMONIC_ACCOUNT_INDEX", defaultValue: uint256(0) });
-            // uint256 privateKey = vm.deriveKey(mnemonic, uint32(mnemonicAccountIndex));
-            broadcaster = vm.addr(vm.deriveKey(mnemonic, uint32(mnemonicAccountIndex)));
+            uint256 privateKey = vm.deriveKey(mnemonic, "m/44'/60'/0'/0", 0);
+            broadcaster = vm.rememberKey(privateKey);
         }
+        player = broadcaster;
     }
 
     modifier broadcast() {
-        vm.startBroadcast(0x7Dd8A1d5C63DB4fDF4C1A303566601158B6EbBA6);
+        vm.startBroadcast(broadcaster);
         _;
         vm.stopBroadcast();
     }

@@ -9,10 +9,6 @@
     "modules": true
   },
   "npm.exclude": "/foundry/**/lib/**",
-  // "solidity.formatter": "prettier",
   "solidity.formatter": "forge",
-  "solidity.packageDefaultDependenciesContractsDirectory": "contracts",
-  "solidity.packageDefaultDependenciesDirectory": "modules"
-  // "editor.defaultFormatter": "esbenp.prettier-vscode",
-  // "editor.formatOnSave": true
+  "editor.formatOnSave": true
 }
