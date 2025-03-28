@@ -2,9 +2,9 @@
 pragma solidity ^0.8.0;
 
 import "@solady/utils/SafeTransferLib.sol";
-import { Address } from "@openzeppelin/contracts-v4.7.1/utils/Address.sol";
-import { IERC20 } from "@openzeppelin/contracts-v4.7.1/token/ERC20/IERC20.sol";
-import { ReentrancyGuard } from "@openzeppelin/contracts-v4.7.1/security/ReentrancyGuard.sol";
+import { Address } from "@openzeppelin/contracts-v4.7.3/utils/Address.sol";
+import { IERC20 } from "@openzeppelin/contracts-v4.7.3/token/ERC20/IERC20.sol";
+import { ReentrancyGuard } from "@openzeppelin/contracts-v4.7.3/security/ReentrancyGuard.sol";
 
 /**
  * @title AuthorizedExecutor

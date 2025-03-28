@@ -5,7 +5,13 @@ Holds the contracts that web3 developers use on a daily basis, including etherna
 ## Install Dependency
 
 ```yarn
-bun install
+yarn install
+forge soldeer install
+forge soldeer install @openzeppelin-contracts~4.7.3
+forge soldeer install @openzeppelin-contracts~5.2.0
+
+forge soldeer install @openzeppelin-contracts-upgradeable~4.7.3
+forge soldeer install @openzeppelin-contracts-upgradeable~5.2.0
 ```
 
 ```bash

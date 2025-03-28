@@ -5,7 +5,7 @@ import { Owned } from "@solmate/auth/Owned.sol";
 import { FixedPointMathLib } from "@solmate/utils/FixedPointMathLib.sol";
 import { ReentrancyGuard } from "@solmate/utils/ReentrancyGuard.sol";
 import { SafeTransferLib, ERC4626, ERC20 } from "@solmate/tokens/ERC4626.sol";
-import { IERC3156FlashBorrower, IERC3156FlashLender } from "@openzeppelin/contracts-v4.7.1/interfaces/IERC3156.sol";
+import { IERC3156FlashBorrower, IERC3156FlashLender } from "@openzeppelin/contracts-v4.7.3/interfaces/IERC3156.sol";
 
 /**
  * @title UnstoppableVault
