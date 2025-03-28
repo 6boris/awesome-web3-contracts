@@ -8,9 +8,9 @@
 @aave/core-v3=node_modules/@aave/core-v3/contracts
 
 @openzeppelin/contracts=dependencies/@openzeppelin-contracts-5.2.0
-@openzeppelin/contracts-v4.7.3=dependencies/@openzeppelin-contracts-4.7.3
+@openzeppelin/contracts-v4.7.3=node_modules/@openzeppelin/contracts-v4.7.3/contracts
 @openzeppelin/contracts-upgradeable=dependencies/@openzeppelin-contracts-upgradeable-5.2.0
-@openzeppelin/contracts-upgradeable-v4.7.3=dependencies/@openzeppelin-contracts-upgradeable-4.7.3
+@openzeppelin/contracts-upgradeable-v4.7.3=node_modules/@openzeppelin/contracts-upgradeable-v4.7.3/contracts
 
 @uniswap/v2-core=node_modules/@uniswap/v2-core
 @uniswap/v2-periphery=node_modules/@uniswap/v2-periphery
