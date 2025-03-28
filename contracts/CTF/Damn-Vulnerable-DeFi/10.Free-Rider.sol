@@ -3,10 +3,10 @@ pragma solidity ^0.8.0;
 
 import { console2 } from "@dev/forge-std/console2.sol";
 import { IWETH } from "@contracts/CTF/Damn-Vulnerable-DeFi/00.Base/WETH9.sol";
-import { IERC721 } from "@openzeppelin/contracts-v4.7.1/token/ERC721/IERC721.sol";
-import { Address } from "@openzeppelin/contracts-v4.7.1/utils/Address.sol";
-import { ReentrancyGuard } from "@openzeppelin/contracts-v4.7.1/security/ReentrancyGuard.sol";
-import { IERC721Receiver } from "@openzeppelin/contracts-v4.7.1/token/ERC721/IERC721Receiver.sol";
+import { IERC721 } from "@openzeppelin/contracts-v4.7.3/token/ERC721/IERC721.sol";
+import { Address } from "@openzeppelin/contracts-v4.7.3/utils/Address.sol";
+import { ReentrancyGuard } from "@openzeppelin/contracts-v4.7.3/security/ReentrancyGuard.sol";
+import { IERC721Receiver } from "@openzeppelin/contracts-v4.7.3/token/ERC721/IERC721Receiver.sol";
 
 import { DamnValuableNFT } from "@contracts/CTF/Damn-Vulnerable-DeFi/00.Base/DamnValuableNFT.sol";
 import { IUniswapV2Callee } from "@uniswap/v2-core/contracts/interfaces/IUniswapV2Callee.sol";

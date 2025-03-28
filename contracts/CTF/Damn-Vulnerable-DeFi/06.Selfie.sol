@@ -1,10 +1,10 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import { ERC20Snapshot } from "@openzeppelin/contracts-v4.7.1/token/ERC20/extensions/ERC20Snapshot.sol";
-import { ReentrancyGuard } from "@openzeppelin/contracts-v4.7.1/security/ReentrancyGuard.sol";
-import { IERC3156FlashLender } from "@openzeppelin/contracts-v4.7.1/interfaces/IERC3156FlashLender.sol";
-import { IERC3156FlashBorrower } from "@openzeppelin/contracts-v4.7.1/interfaces/IERC3156FlashBorrower.sol";
+import { ERC20Snapshot } from "@openzeppelin/contracts-v4.7.3/token/ERC20/extensions/ERC20Snapshot.sol";
+import { ReentrancyGuard } from "@openzeppelin/contracts-v4.7.3/security/ReentrancyGuard.sol";
+import { IERC3156FlashLender } from "@openzeppelin/contracts-v4.7.3/interfaces/IERC3156FlashLender.sol";
+import { IERC3156FlashBorrower } from "@openzeppelin/contracts-v4.7.3/interfaces/IERC3156FlashBorrower.sol";
 import { DamnValuableTokenSnapshot } from "@contracts/CTF/Damn-Vulnerable-DeFi/00.Base/DamnValuableTokenSnapshot.sol";
 
 contract SelfiePool is ReentrancyGuard, IERC3156FlashLender {

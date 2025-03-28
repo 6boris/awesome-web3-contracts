@@ -3,7 +3,7 @@ pragma solidity ^0.8.0;
 
 import { Ownable } from "@solady/auth/Ownable.sol";
 import { SafeTransferLib } from "@solady/utils/SafeTransferLib.sol";
-import { IERC20 } from "@openzeppelin/contracts-v4.7.1/token/ERC20/IERC20.sol";
+import { IERC20 } from "@openzeppelin/contracts-v4.7.3/token/ERC20/IERC20.sol";
 import { GnosisSafe } from "@gnosis.pm/safe-contracts/GnosisSafe.sol";
 import { GnosisSafeProxy, IProxyCreationCallback } from "@gnosis.pm/safe-contracts/proxies/IProxyCreationCallback.sol";
 

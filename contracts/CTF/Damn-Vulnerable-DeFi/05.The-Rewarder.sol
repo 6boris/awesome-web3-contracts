@@ -4,10 +4,10 @@ pragma solidity ^0.8.0;
 import { OwnableRoles } from "@solady/auth/OwnableRoles.sol";
 import { FixedPointMathLib } from "@solady/utils/FixedPointMathLib.sol";
 import { SafeTransferLib } from "@solady/utils/SafeTransferLib.sol";
-import { ERC20 } from "@openzeppelin/contracts-v4.7.1/token/ERC20/ERC20.sol";
-import { Address } from "@openzeppelin/contracts-v4.7.1/utils/Address.sol";
-import { ERC20Snapshot } from "@openzeppelin/contracts-v4.7.1/token/ERC20/extensions/ERC20Snapshot.sol";
-import { ReentrancyGuard } from "@openzeppelin/contracts-v4.7.1/security/ReentrancyGuard.sol";
+import { ERC20 } from "@openzeppelin/contracts-v4.7.3/token/ERC20/ERC20.sol";
+import { Address } from "@openzeppelin/contracts-v4.7.3/utils/Address.sol";
+import { ERC20Snapshot } from "@openzeppelin/contracts-v4.7.3/token/ERC20/extensions/ERC20Snapshot.sol";
+import { ReentrancyGuard } from "@openzeppelin/contracts-v4.7.3/security/ReentrancyGuard.sol";
 
 import { DamnValuableToken } from "@contracts/CTF/Damn-Vulnerable-DeFi/00.Base/DamnValuableToken.sol";
 

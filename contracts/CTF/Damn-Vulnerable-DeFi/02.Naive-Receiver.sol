@@ -2,8 +2,8 @@
 pragma solidity ^0.8.0;
 
 import { SafeTransferLib } from "@solady/utils/SafeTransferLib.sol";
-import { ReentrancyGuard } from "@openzeppelin/contracts-v4.7.1/security/ReentrancyGuard.sol";
-import { IERC3156FlashBorrower, IERC3156FlashLender } from "@openzeppelin/contracts-v4.7.1/interfaces/IERC3156.sol";
+import { ReentrancyGuard } from "@openzeppelin/contracts-v4.7.3/security/ReentrancyGuard.sol";
+import { IERC3156FlashBorrower, IERC3156FlashLender } from "@openzeppelin/contracts-v4.7.3/interfaces/IERC3156.sol";
 
 /**
  * @title FlashLoanReceiver

@@ -50,6 +50,9 @@ jobs:
       - name: "Install the Node.js dependencies"
         run: "bun install"
 
+      - name: "Install soldeer dependencies"
+        run: "forge soldeer install"
+
       - name: "Build the contracts and print their size"
         run: "forge build --sizes"
 
@@ -82,6 +85,9 @@ jobs:
           echo "FOUNDRY_FUZZ_SEED=$(
             echo $(($EPOCHSECONDS - $EPOCHSECONDS % 604800))
           )" >> $GITHUB_ENV
+
+      - name: "Install soldeer dependencies"
+        run: "forge soldeer install"
 
       - name: "Run the tests"
         run: "forge test"

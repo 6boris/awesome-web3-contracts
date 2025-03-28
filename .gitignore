@@ -14,3 +14,7 @@ lcov.info
 yarn.lock
 build
 .idea
+
+
+# Soldeer
+dependencies

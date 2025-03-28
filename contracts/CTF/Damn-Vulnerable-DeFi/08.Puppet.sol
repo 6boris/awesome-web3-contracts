@@ -2,8 +2,8 @@
 pragma solidity ^0.8.0;
 
 import { console2 } from "@dev/forge-std/console2.sol";
-import { Address } from "@openzeppelin/contracts-v4.7.1/utils/Address.sol";
-import { ReentrancyGuard } from "@openzeppelin/contracts-v4.7.1/security/ReentrancyGuard.sol";
+import { Address } from "@openzeppelin/contracts-v4.7.3/utils/Address.sol";
+import { ReentrancyGuard } from "@openzeppelin/contracts-v4.7.3/security/ReentrancyGuard.sol";
 import { DamnValuableToken } from "@contracts/CTF/Damn-Vulnerable-DeFi/00.Base/DamnValuableToken.sol";
 
 // https://etherscan.io/address/0xc0a47dFe034B400B47bDaD5FecDa2621de6c4d95#code
