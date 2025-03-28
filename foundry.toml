@@ -5,12 +5,13 @@
   block_timestamp = 1_680_220_800 # March 31, 2023 at 00:00 GMT
   bytecode_hash = "none"
   cbor_metadata = false
-  evm_version = "shanghai"           # See https://www.evmdiff.com/features?name=PUSH0&kind=opcode
+  # https://docs.soliditylang.org/en/latest/using-the-compiler.html#target-options
+  evm_version = "prague"           # See https://www.evmdiff.com/features?name=PUSH0&kind=opcode
   fuzz = { runs = 1_000 }
   gas_reports = ["*"]
   optimizer = true
   optimizer_runs = 10_000
-  solc = "0.8.28"
+  solc = "0.8.29"
   src = "contracts"
   libs = ["foundry/lib"]
   test = "foundry/test"
@@ -53,6 +54,8 @@
   sepolia = "https://eth-sepolia.g.alchemy.com/v2/${API_KEY_ALCHEMY}"
   holesky = "https://ethereum-holesky.publicnode.com"
 
+  morph = "https://rpc-quicknode.morphl2.io"
+
   polygon = "https://polygon-mainnet.g.alchemy.com/v2/${API_KEY_ALCHEMY}"
   mumbai  = "https://polygon-mumbai.g.alchemy.com/v2/${API_KEY_ALCHEMY}"
 
@@ -65,6 +68,5 @@
   optimism_mainnet = "https://opt-mainnet.g.alchemy.com/v2/${API_KEY_ALCHEMY}"
   optimism_goerli  = "https://opt-goerli.g.alchemy.com/v2/${API_KEY_ALCHEMY}"
 
-
-  avalanche_mainnet = "https://rpc.ankr.com/avalanche"
+  avalanche_mainnet = "https://avax-mainnet.g.alchemy.com/v2/${API_KEY_ALCHEMY}"
   avalanche_fuji = "https://rpc.ankr.com/avalanche_fuji"

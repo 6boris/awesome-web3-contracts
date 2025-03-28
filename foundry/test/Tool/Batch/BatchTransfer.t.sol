@@ -8,13 +8,18 @@ import { ERC20 } from "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import { ERC721 } from "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import { BatchTransfer } from "@contracts/Tool/Batch/BatchTransfer.sol";
 /*
-    forge test -r http://localhost:8545 --match-path foundry/test/Tool/Batch/BatchTransfer.t.sol -vvvv
+    forge test --match-path foundry/test/Tool/Batch/BatchTransfer.t.sol -vvvv
 */
 
 contract TestERC20Token is ERC20 {
     constructor() ERC20("MyToken", "MTK") {
         _mint(msg.sender, 1000 ether);
     }
+}
+
+struct Item {
+    address account;
+    uint256 amount;
 }
 
 contract FallbackTest is Test {
@@ -29,6 +34,7 @@ contract FallbackTest is Test {
     function setUp() public {
         vm.startPrank(admin);
         vm.deal(admin, 10 ether);
+        vm.deal(player1, 10 ether);
         erc20Token = new TestERC20Token();
         erc20Token.transfer(player1, 999 ether);
     }
@@ -46,6 +52,30 @@ contract FallbackTest is Test {
 
         batchTransferInst.BatchTransferERC20(erc20Token, toAddressList, toAmountList);
 
+        _after();
+    }
+
+    // address[] public toAddressList;
+
+    function test_Native_BatchTransfer() public {
+        vm.startPrank(player1);
+        Item[5] memory toItems = [
+            Item(address(100_001), 1),
+            Item(address(100_002), 1),
+            Item(address(100_003), 1),
+            Item(address(100_004), 1),
+            Item(address(100_005), 1)
+        ];
+        uint256 allAmount = uint256(0);
+        uint256[] memory toAmountList = new uint256[](toItems.length);
+        address[] memory toAddressList = new address[](toItems.length);
+        for (uint256 i = 0; i < toItems.length; i++) {
+            Item memory item = toItems[i];
+            toAmountList[i] = item.amount;
+            toAddressList[i] = item.account;
+            allAmount += item.amount;
+        }
+        batchTransferInst.BatchTransferNative{ value: allAmount }(toAddressList, toAmountList);
         _after();
     }
 

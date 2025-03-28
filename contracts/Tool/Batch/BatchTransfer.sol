@@ -5,6 +5,13 @@ import { ERC20 } from "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import { ERC721 } from "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
 contract BatchTransfer {
+    function BatchTransferNative(address[] calldata toAddressList, uint256[] calldata toAmountList) external payable {
+        require(toAddressList.length == toAmountList.length, "Params not match");
+        for (uint256 i = 0; i < toAmountList.length; i++) {
+            payable(toAddressList[i]).transfer(toAmountList[i]);
+        }
+    }
+
     function BatchTransferERC20(
         ERC20 token,
         address[] calldata toAddressList,
