@@ -6,7 +6,8 @@
   bytecode_hash = "none"
   cbor_metadata = false
   # https://docs.soliditylang.org/en/latest/using-the-compiler.html#target-options
-  evm_version = "prague"           # See https://www.evmdiff.com/features?name=PUSH0&kind=opcode
+  # https://www.evmdiff.com/features?name=PUSH0&kind=opcode
+  evm_version = "prague"
   fuzz = { runs = 1_000 }
   gas_reports = ["*"]
   optimizer = true
@@ -19,7 +20,26 @@
   out = "foundry/out"
   broadcast = 'foundry/broadcast'
   cache_path = 'foundry/cache'
+  remappings = [
+    "@contracts=contracts",
+    "@dev/forge-std/=dependencies/forge-std-1.9.6/src",
 
+    "@solmate=node_modules/solmate/src",
+    "@solady=node_modules/solady/src",
+    "@prb/test=node_modules/@prb/test/src",
+    "@gnosis.pm/safe-contracts=node_modules/@gnosis.pm/safe-contracts/contracts",
+    "@aave/core-v3=node_modules/@aave/core-v3/contracts",
+
+    "@openzeppelin/contracts=dependencies/@openzeppelin-contracts-5.2.0",
+    "@openzeppelin/contracts-v4.7.3=node_modules/@openzeppelin/contracts-v4.7.3/contracts",
+    "@openzeppelin/contracts-upgradeable=dependencies/@openzeppelin-contracts-upgradeable-5.2.0",
+    "@openzeppelin/contracts-upgradeable-v4.7.3=node_modules/@openzeppelin/contracts-upgradeable-v4.7.3/contracts",
+
+    "@uniswap/v2-core=node_modules/@uniswap/v2-core",
+    "@uniswap/v2-periphery=node_modules/@uniswap/v2-periphery",
+    "@uniswap/v3-core=node_modules/@uniswap/v3-core",
+    "@uniswap/v3-periphery=node_modules/@uniswap/v3-periphery"
+  ]
 
 [profile.ci]
   fuzz = { runs = 10_000 }
@@ -73,19 +93,19 @@
 
 # https://soldeer.xyz/
 [dependencies]
-"forge-std" = { version = "1.9.6", git = "https://github.com/foundry-rs/forge-std.git", rev = "6853b9ec7df5dc0c213b05ae67785ad4f4baa0ea" }
-"@openzeppelin-contracts" = "5.2.0"
-"@openzeppelin-contracts-upgradeable" = "5.2.0"
+  "forge-std" = { version = "1.9.6", git = "https://github.com/foundry-rs/forge-std.git", rev = "6853b9ec7df5dc0c213b05ae67785ad4f4baa0ea" }
+  "@openzeppelin-contracts" = "5.2.0"
+  "@openzeppelin-contracts-upgradeable" = "5.2.0"
 
 [soldeer]
-# whether soldeer manages remappings
-remappings_generate = false
-# whether soldeer re-generates all remappings when installing, updating or uninstalling deps
-remappings_regenerate = false
-# whether to suffix the remapping with the version: `name-a.b.c`
-remappings_version = false
-# a prefix to add to the remappings ("@" would give `@name`)
-remappings_prefix = ""
-# where to store the remappings ("txt" for `remappings.txt` or "config" for `foundry.toml`)
-# ignored when `soldeer.toml` is used as config (uses `remappings.txt`)
-remappings_location = "txt"
+  # whether soldeer manages remappings
+  remappings_generate = false
+  # whether soldeer re-generates all remappings when installing, updating or uninstalling deps
+  remappings_regenerate = false
+  # whether to suffix the remapping with the version: `name-a.b.c`
+  remappings_version = false
+  # a prefix to add to the remappings ("@" would give `@name`)
+  remappings_prefix = ""
+  # where to store the remappings ("txt" for `remappings.txt` or "config" for `foundry.toml`)
+  # ignored when `soldeer.toml` is used as config (uses `remappings.txt`)
+  remappings_location = "txt"
