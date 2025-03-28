@@ -1,6 +1,5 @@
 # directories
 node_modules
-
 foundry/out
 foundry/coverage
 foundry/cache

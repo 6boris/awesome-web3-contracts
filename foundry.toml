@@ -53,6 +53,8 @@
   sepolia = "https://eth-sepolia.g.alchemy.com/v2/${API_KEY_ALCHEMY}"
   holesky = "https://ethereum-holesky.publicnode.com"
 
+  morph = "https://rpc-quicknode.morphl2.io"
+
   polygon = "https://polygon-mainnet.g.alchemy.com/v2/${API_KEY_ALCHEMY}"
   mumbai  = "https://polygon-mumbai.g.alchemy.com/v2/${API_KEY_ALCHEMY}"
 
@@ -65,6 +67,5 @@
   optimism_mainnet = "https://opt-mainnet.g.alchemy.com/v2/${API_KEY_ALCHEMY}"
   optimism_goerli  = "https://opt-goerli.g.alchemy.com/v2/${API_KEY_ALCHEMY}"
 
-
-  avalanche_mainnet = "https://rpc.ankr.com/avalanche"
+  avalanche_mainnet = "https://avax-mainnet.g.alchemy.com/v2/${API_KEY_ALCHEMY}"
   avalanche_fuji = "https://rpc.ankr.com/avalanche_fuji"
