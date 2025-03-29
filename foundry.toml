@@ -7,7 +7,7 @@
   cbor_metadata = false
   # https://docs.soliditylang.org/en/latest/using-the-compiler.html#target-options
   # https://www.evmdiff.com/features?name=PUSH0&kind=opcode
-  evm_version = "prague"
+  evm_version = "cancun"
   fuzz = { runs = 1_000 }
   gas_reports = ["*"]
   optimizer = true

@@ -15,6 +15,7 @@
     "noImplicitThis": true,
     "esModuleInterop": true,
     "strictNullChecks": true,
+    "resolveJsonModule": true,
     "strictFunctionTypes": true,
     "skipLibCheck": true
   }
