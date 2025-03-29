@@ -1,48 +1,34 @@
 [
   {
-    "type": "function",
-    "name": "BatchTransferERC20",
     "inputs": [
-      {
-        "name": "token",
-        "type": "address",
-        "internalType": "contract ERC20"
-      },
-      {
-        "name": "toAddressList",
-        "type": "address[]",
-        "internalType": "address[]"
-      },
-      {
-        "name": "toAmountList",
-        "type": "uint256[]",
-        "internalType": "uint256[]"
-      }
+      { "internalType": "contract ERC20", "name": "token", "type": "address" },
+      { "internalType": "address[]", "name": "toAddressList", "type": "address[]" },
+      { "internalType": "uint256[]", "name": "toAmountList", "type": "uint256[]" }
     ],
+    "name": "BatchTransferERC20",
     "outputs": [],
-    "stateMutability": "nonpayable"
+    "stateMutability": "nonpayable",
+    "type": "function"
   },
   {
-    "type": "function",
-    "name": "BatchTransferERC721",
     "inputs": [
-      {
-        "name": "token",
-        "type": "address",
-        "internalType": "contract ERC721"
-      },
-      {
-        "name": "toAddressList",
-        "type": "address[]",
-        "internalType": "address[]"
-      },
-      {
-        "name": "toTokenIDList",
-        "type": "uint256[]",
-        "internalType": "uint256[]"
-      }
+      { "internalType": "contract ERC721", "name": "token", "type": "address" },
+      { "internalType": "address[]", "name": "toAddressList", "type": "address[]" },
+      { "internalType": "uint256[]", "name": "toTokenIDList", "type": "uint256[]" }
     ],
+    "name": "BatchTransferERC721",
     "outputs": [],
-    "stateMutability": "nonpayable"
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "address[]", "name": "toAddressList", "type": "address[]" },
+      { "internalType": "uint256[]", "name": "toAmountList", "type": "uint256[]" }
+    ],
+    "name": "BatchTransferNative",
+    "outputs": [],
+    "stateMutability": "payable",
+    "type": "function"
   }
 ]
