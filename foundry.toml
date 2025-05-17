@@ -12,7 +12,7 @@
   gas_reports = ["*"]
   optimizer = true
   optimizer_runs = 10_000
-  solc = "0.8.29"
+  solc = "0.8.30"
   src = "contracts"
   libs = ["dependencies"]
   test = "foundry/test"
@@ -84,6 +84,8 @@
 
   arbitrum_mainnet = "https://arb-mainnet.g.alchemy.com/v2/${API_KEY_ALCHEMY}"
   arbitrum_goerli  = "https://arb-goerli.g.alchemy.com/v2/${API_KEY_ALCHEMY}"
+
+  bnb_mainnet  = "https://bnb-mainnet.g.alchemy.com/v2/${API_KEY_ALCHEMY}"
 
   optimism_mainnet = "https://opt-mainnet.g.alchemy.com/v2/${API_KEY_ALCHEMY}"
   optimism_goerli  = "https://opt-goerli.g.alchemy.com/v2/${API_KEY_ALCHEMY}"
