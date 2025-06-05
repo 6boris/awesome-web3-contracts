@@ -7,7 +7,7 @@
   cbor_metadata = false
   # https://docs.soliditylang.org/en/latest/using-the-compiler.html#target-options
   # https://www.evmdiff.com/features?name=PUSH0&kind=opcode
-  evm_version = "cancun"
+  evm_version = "osaka"
   fuzz = { runs = 1_000 }
   gas_reports = ["*"]
   optimizer = true
@@ -96,8 +96,8 @@
 # https://soldeer.xyz/
 [dependencies]
   "forge-std" = { version = "1.9.6", git = "https://github.com/foundry-rs/forge-std.git", rev = "6853b9ec7df5dc0c213b05ae67785ad4f4baa0ea" }
-  "@openzeppelin-contracts" = "5.2.0"
-  "@openzeppelin-contracts-upgradeable" = "5.2.0"
+  "@openzeppelin-contracts" = "5.3.0"
+  "@openzeppelin-contracts-upgradeable" = "5.3.0"
 
 [soldeer]
   # whether soldeer manages remappings
