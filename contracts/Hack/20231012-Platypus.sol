@@ -1,3 +1,4 @@
+// forge-lint: disable-start
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
@@ -47,14 +48,7 @@ interface IBenqiSAVAX {
 
 interface IPlatypusPool {
     function assetOf(address token) external view returns (address);
-    function deposit(
-        address token,
-        uint256 amount,
-        address to,
-        uint256 deadline
-    )
-        external
-        returns (uint256 liquidity);
+    function deposit(address token, uint256 amount, address to, uint256 deadline) external returns (uint256 liquidity);
     function withdraw(
         address token,
         uint256 liquidity,

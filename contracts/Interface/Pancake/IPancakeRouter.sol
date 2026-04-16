@@ -1,3 +1,4 @@
+// forge-lint: disable-start
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
@@ -152,20 +153,8 @@ interface IPancakeRouter01 {
         external
         pure
         returns (uint256 amountIn);
-    function getAmountsOut(
-        uint256 amountIn,
-        address[] calldata path
-    )
-        external
-        view
-        returns (uint256[] memory amounts);
-    function getAmountsIn(
-        uint256 amountOut,
-        address[] calldata path
-    )
-        external
-        view
-        returns (uint256[] memory amounts);
+    function getAmountsOut(uint256 amountIn, address[] calldata path) external view returns (uint256[] memory amounts);
+    function getAmountsIn(uint256 amountOut, address[] calldata path) external view returns (uint256[] memory amounts);
 }
 
 interface IPancakeRouter02 is IPancakeRouter01 {

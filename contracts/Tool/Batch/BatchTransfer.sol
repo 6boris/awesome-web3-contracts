@@ -5,14 +5,14 @@ import { ERC20 } from "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import { ERC721 } from "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
 contract BatchTransfer {
-    function BatchTransferNative(address[] calldata toAddressList, uint256[] calldata toAmountList) external payable {
+    function batchTransferNative(address[] calldata toAddressList, uint256[] calldata toAmountList) external payable {
         require(toAddressList.length == toAmountList.length, "Params num not match");
         for (uint256 i = 0; i < toAmountList.length; i++) {
             payable(toAddressList[i]).transfer(toAmountList[i]);
         }
     }
 
-    function BatchTransferERC20(
+    function batchTransferERC20(
         ERC20 token,
         address[] calldata toAddressList,
         uint256[] calldata toAmountList
@@ -27,16 +27,16 @@ contract BatchTransfer {
         }
     }
 
-    function BatchTransferERC721(
+    function batchTransferERC721(
         ERC721 token,
         address[] calldata toAddressList,
-        uint256[] calldata toTokenIDList
+        uint256[] calldata toTokenIdList
     )
         external
     {
-        require(toAddressList.length == toTokenIDList.length, "Params num not match");
+        require(toAddressList.length == toTokenIdList.length, "Params num not match");
         for (uint256 idx = 0; idx < toAddressList.length; idx++) {
-            token.transferFrom(msg.sender, toAddressList[idx], toTokenIDList[idx]);
+            token.transferFrom(msg.sender, toAddressList[idx], toTokenIdList[idx]);
         }
     }
 }
