@@ -30,7 +30,7 @@
     "@gnosis.pm/safe-contracts=node_modules/@gnosis.pm/safe-contracts/contracts",
     "@aave/core-v3=node_modules/@aave/core-v3/contracts",
 
-    "@openzeppelin/contracts=dependencies/@openzeppelin-contracts-5.2.0",
+    "@openzeppelin/contracts=node_modules/@openzeppelin/contracts",
     "@openzeppelin/contracts-v4.7.3=node_modules/@openzeppelin/contracts-v4.7.3/contracts",
     "@openzeppelin/contracts-upgradeable=dependencies/@openzeppelin-contracts-upgradeable-5.2.0",
     "@openzeppelin/contracts-upgradeable-v4.7.3=node_modules/@openzeppelin/contracts-upgradeable-v4.7.3/contracts",
@@ -98,8 +98,8 @@
 
 # https://soldeer.xyz/
 [dependencies]
-  "@openzeppelin-contracts" = "5.3.0"
-  "@openzeppelin-contracts-upgradeable" = "5.3.0"
+  "@openzeppelin-contracts" = "5.2.0"
+  "@openzeppelin-contracts-upgradeable" = "5.2.0"
 
 [soldeer]
   # whether soldeer manages remappings
