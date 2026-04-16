@@ -98,8 +98,6 @@
 
 # https://soldeer.xyz/
 [dependencies]
-  "@openzeppelin-contracts" = "5.2.0"
-  "@openzeppelin-contracts-upgradeable" = "5.2.0"
 
 [soldeer]
   # whether soldeer manages remappings
