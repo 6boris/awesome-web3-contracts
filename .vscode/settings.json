@@ -1,8 +1,11 @@
 {
   "[solidity]": {
-    "editor.defaultFormatter": "JuanBlanco.solidity"
+    "editor.defaultFormatter": "NomicFoundation.hardhat-solidity"
   },
   "[toml]": {
+    "editor.defaultFormatter": "tamasfe.even-better-toml"
+  },
+  "[json][jsonc][md][yml]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "search.exclude": {

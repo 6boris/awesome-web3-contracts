@@ -18,3 +18,5 @@ build
 
 # Soldeer
 dependencies
+.claude
+.omc

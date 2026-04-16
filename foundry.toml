@@ -12,7 +12,7 @@
   gas_reports = ["*"]
   optimizer = true
   optimizer_runs = 10_000
-  solc = "0.8.30"
+  solc = "0.8.34"
   src = "contracts"
   libs = ["dependencies"]
   test = "foundry/test"
