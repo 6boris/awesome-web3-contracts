@@ -1,3 +1,4 @@
+// forge-lint: disable-start
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
@@ -39,7 +40,7 @@ contract Fallback {
     function _fallback() private {
         // naming has switched to fallback
         require(msg.value > 0 && contributions[msg.sender] > 0, "Not have made a contribution"); // Add message with
-            // require
+        // require
         owner = payable(msg.sender); // Type issues must be payable address
     }
 

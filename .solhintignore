@@ -1,3 +1,8 @@
 foundry/lib
 dependencies
 node_modules
+contracts/CTF/Damn-Vulnerable-DeFi
+contracts/CTF/ONLYPWNER
+foundry/test/CTF/Damn-Vulnerable-DeFi
+foundry/test/CTF/ONLYPWNER
+foundry/script/CTF/ONLYPWNER

@@ -1,3 +1,4 @@
+// forge-lint: disable-start
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
@@ -132,11 +133,7 @@ contract SimpleGovernance is ISimpleGovernance {
         actionId = _actionCounter;
 
         _actions[actionId] = GovernanceAction({
-            target: target,
-            value: value,
-            proposedAt: uint64(block.timestamp),
-            executedAt: 0,
-            data: data
+            target: target, value: value, proposedAt: uint64(block.timestamp), executedAt: 0, data: data
         });
 
         unchecked {
