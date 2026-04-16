@@ -3,6 +3,7 @@ name: "CI"
 env:
   API_KEY_ALCHEMY: ${{ secrets.API_KEY_ALCHEMY }}
   FOUNDRY_PROFILE: "ci"
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 on:
   workflow_dispatch:
