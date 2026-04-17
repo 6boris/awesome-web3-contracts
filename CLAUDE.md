@@ -81,8 +81,7 @@ bun run prettier:write  # auto-fix JSON / MD / YML formatting
 ```
 
 - `foundry.toml [lint]` and `.solhintignore` intentionally skip `contracts/CTF/Damn-Vulnerable-DeFi/**` and
-  `contracts/CTF/ONLYPWNER/**` — their vulnerabilities are by design and would drown the lint output in false
-  positives.
+  `contracts/CTF/ONLYPWNER/**` — their vulnerabilities are by design and would drown the lint output in false positives.
 - `prettier` targets `**/*.{json,md,yml}` with `printWidth = 120` and `proseWrap = "always"`.
 
 ## CI (`.github/workflows/ci.yml`)
